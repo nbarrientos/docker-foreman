@@ -20,7 +20,7 @@ MAINTAINER Dan McDougall <daniel.mcdougall@liftoffsoftware.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 # Add the Foreman repos
-RUN echo "deb http://deb.theforeman.org/ trusty nightly" > /etc/apt/sources.list.d/foreman.list
+RUN echo "deb http://deb.theforeman.org/ xenial nightly" > /etc/apt/sources.list.d/foreman.list
 RUN echo "deb http://deb.theforeman.org/ plugins nightly" >> /etc/apt/sources.list.d/foreman.list
 RUN curl http://deb.theforeman.org/pubkey.gpg | apt-key add -
 RUN apt-get update --fix-missing && apt-get -y upgrade && \
