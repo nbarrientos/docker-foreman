@@ -33,6 +33,9 @@ RUN apt-get update --fix-missing && apt-get -y upgrade && \
 RUN apt-get -y clean
 RUN ln -s /opt/puppetlabs/bin/facter /usr/bin/
 RUN ln -s /opt/puppetlabs/bin/puppet /usr/bin/
+RUN curl http://deb.theforeman.org/pool/plugins/nightly/p/puppet-agent-oauth/puppet-agent-oauth_0.5.1-2_all.deb -o puppet-agent-oauth_0.5.1-2_all.deb
+RUN dpkg -i puppet-agent-oauth_0.5.1-2_all.deb
+
 
 # Copy our first_run.sh script into the container:
 COPY first_run.sh /usr/local/bin/first_run.sh
