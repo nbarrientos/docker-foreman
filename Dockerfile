@@ -21,7 +21,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Add the Foreman repos
 RUN echo "deb http://deb.theforeman.org/ xenial nightly" > /etc/apt/sources.list.d/foreman.list
-RUN echo "deb http://deb.theforeman.org/ plugins nightly" >> /etc/apt/sources.list.d/foreman.lis
+RUN echo "deb http://deb.theforeman.org/ plugins nightly" >> /etc/apt/sources.list.d/foreman.list
 RUN curl http://deb.theforeman.org/pubkey.gpg | apt-key add -
 RUN curl http://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb -o puppet-release-xenial.deb
 RUN dpkg -i puppet-release-xenial.deb
