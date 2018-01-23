@@ -31,6 +31,8 @@ RUN apt-get update --fix-missing && apt-get -y upgrade && \
     postgresql-server-dev-9.5 libxml2-dev libxslt1-dev libvirt-dev \
     foreman-installer foreman-cli foreman-postgresql
 RUN apt-get -y clean
+RUN ln -s /opt/puppetlabs/bin/facter /usr/bin/
+RUN ln -s /opt/puppetlabs/bin/puppet /usr/bin/
 
 # Copy our first_run.sh script into the container:
 COPY first_run.sh /usr/local/bin/first_run.sh

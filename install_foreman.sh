@@ -5,8 +5,5 @@
 #               about most of the time).
 #
 
-# Fix the hostname problem by removing that check and setting a dummy FQDN:
-rm -f /usr/share/foreman-installer/checks/hostname.rb
-export FACTER_fqdn="foreman.company.com" # Dummy/temp FQDN
 /usr/sbin/foreman-installer
 exit 0
