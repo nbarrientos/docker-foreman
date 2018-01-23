@@ -46,7 +46,7 @@ EOF
 # Configure Foreman to start at boot
 sed -i -e "s/START=no/START=yes/g" /etc/default/foreman
 
-touch /etc/foreman/.first_run_completed
+/etc/init.d/foreman start
 
 echo -e "\033[1mMAKE NOTE OF THAT PASSWORD\033[0m"
 echo -e "\033[1mNOTE:\033[0m You may have to set the idle_timeout in Administer->Settings to something > 0 (not sure how to set that in this script)."

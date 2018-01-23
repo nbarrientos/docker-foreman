@@ -40,13 +40,6 @@ RUN dpkg -i puppet-agent-oauth_0.5.1-2_all.deb
 # Copy our first_run.sh script into the container:
 COPY first_run.sh /usr/local/bin/first_run.sh
 RUN chmod 755 /usr/local/bin/first_run.sh
-# Also copy our installer script
-COPY install_foreman.sh /opt/install_foreman.sh
-RUN chmod 755 /opt/install_foreman.sh
-
-# Perform the installation
-RUN bash /opt/install_foreman.sh
-RUN rm -f /opt/install_foreman.sh # Don't need it anymore
 
 # Expose our HTTP/HTTPS ports:
 EXPOSE 80
