@@ -23,9 +23,11 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN echo "deb http://deb.theforeman.org/ xenial nightly" > /etc/apt/sources.list.d/foreman.list
 RUN echo "deb http://deb.theforeman.org/ plugins nightly" >> /etc/apt/sources.list.d/foreman.list
 RUN curl http://deb.theforeman.org/pubkey.gpg | apt-key add -
+RUN wget https://apt.puppetlabs.com/puppet5-release-xenial.deb
+RUN dpkg -i puppet5-release-xenial.deb
 RUN apt-get update --fix-missing && apt-get -y upgrade && \
-    apt-get -y install git puppet apache2 build-essential ruby ruby-dev rake \
-    facter bundler postgresql-9.5 postgresql-client-9.5 python \
+    apt-get -y install git puppet-agent apache2 build-essential ruby ruby-dev rake \
+    bundler postgresql-9.5 postgresql-client-9.5 python \
     postgresql-server-dev-9.5 libxml2-dev libxslt1-dev libvirt-dev \
     foreman-installer foreman-cli foreman-postgresql
 RUN apt-get -y clean
