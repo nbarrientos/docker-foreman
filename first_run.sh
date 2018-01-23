@@ -22,7 +22,7 @@ echo "FIRST-RUN: Please wait while Foreman is configured..."
 mkdir -p /etc/ssl/postgresql/{private,certs}
 cp /etc/ssl/certs/ssl-cert-snakeoil.pem /etc/ssl/postgresql/certs/
 cp /etc/ssl/private/ssl-cert-snakeoil.key /etc/ssl/postgresql/private/
-chmod 640 /etc/ssl/postgresql/private/ssl-cert-snakeoil.key
+chmod 600 /etc/ssl/postgresql/private/ssl-cert-snakeoil.key
 chmod 750 /etc/ssl/postgresql/private
 chown -R postgres /etc/ssl/postgresql
 
